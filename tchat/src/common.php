@@ -1,10 +1,10 @@
 <?php
 
 function db_connect() {
-    $host = "localhost";
+    $host = "172.28.100.114";
     $dbase = "tchat";
-    $user = "root";
-    $psw = "";
+    $user = "imen_r";
+    $psw = "1306";
     $charset = "utf8";
     $dns = "mysql:host=$host;dbname=$dbase;charset=$charset";
     try {
