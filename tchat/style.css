@@ -8,7 +8,6 @@ body {
     box-sizing: border-box;
   }
   
-  /* Add padding to containers */
   .container {
     padding: 16px;
     background: #fff;
@@ -21,7 +20,7 @@ body {
     color: #8d8c8cde;
  
   }
-  /* Full-width input fields */
+
   .input {
     width: 100%;
     padding: 15px;
@@ -30,20 +29,73 @@ body {
     border: 1px solid #f1f1f1;
     border-radius: 25px;
     background: #e6e6e6;
+    
   }
   
   .input:focus {
     background-color: #ddd;
     outline: none;
   }
-  
-  /* Overwrite default styles of hr */
+
   hr {
     border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+  }
+
+
+  .send-box {
+    display: flex;
+    justify-content: center;
+  }
+  .sendbtn {
+    background: #1b9bf0;
+    color: white;
+    padding: 16px 20px;
+    margin: 0 auto;
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 18%;
+    opacity: 0.9;
+    height: 3rem;
+  }
+
+  .sendbtn:hover {
+    opacity: 1.5;
+  }
+
+  .logoutbtn {
+    background: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 0 auto;
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+    height: 3rem;
+  }
+
+  .logoutbtn:hover {
+    opacity: 1.5;
+    background: #e21111;
+  }
+
+  .text_area {
+    width: 80%;
+    padding: 15px;
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+    background: #e6e6e6;
+    
   }
   
-  /* Set a style for the submit button */
+  .text_area:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
   .registerbtn {
     background: #4CAF50;
     color: white;
@@ -62,13 +114,11 @@ body {
     opacity: 1;
     background: #333333;
   }
-  
-  /* Add a blue text color to links */
+
   a {
     color: dodgerblue;
   }
   
-  /* Set a grey background color and center the text of the "sign in" section */
   .signin {
     background-color: #f1f1f1;
     text-align: center;
@@ -76,4 +126,21 @@ body {
   
   .title {
     text-align: center;
+  }
+
+  .messages {
+    background: #c0bcbc;
+    border-radius: 10px;
+    padding: 1em;
+    height: 45vh;
+    overflow: auto;
+  }
+  
+  .message {
+    color: black;
+    padding: 0.3em;
+  }
+  
+  .date, .username {
+    font-weight: bold;
   }
