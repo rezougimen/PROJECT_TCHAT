@@ -68,8 +68,6 @@ function register() {
                 header('Location: ./home.php');
             }
             else {
-                echo 'Ce pseudo existe déja  !';
-
                 ?>
                 <script language="javascript">
                     alert("Ce pseudo existe déja  !");
