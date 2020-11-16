@@ -1,6 +1,5 @@
 <?php
 session_start();
-require ('common.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +7,7 @@ require ('common.php');
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet"  media="screen"  type="text/css"  href="../style.css" />
-        <title>Créer un compte</title>
+        <title>Chatter</title>
         <script src="../message.js"></script>
     </head>
     <body>

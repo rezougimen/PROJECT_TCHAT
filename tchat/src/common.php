@@ -1,5 +1,5 @@
 <?php
-
+//connecter à la base de donnée
 function db_connect() {
     $host = "172.28.100.114";
     $dbase = "tchat";
@@ -10,12 +10,17 @@ function db_connect() {
     try {
         $dbase = new PDO($dns, $user, $psw);
         $dbase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbase->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo 'échec lors de la connexion : ' . $e->getMessage();
     }
     return $dbase;
 }
 
+/**
+ * Vérifier si le mot de passe est identique avec la confirmation de mot de passe
+ * return boolean $response  
+ */ 
 function check_psw() {
     $password = htmlspecialchars($_POST['password']);
     $password_confirm = htmlspecialchars($_POST['password-repeat']);
@@ -27,12 +32,20 @@ function check_psw() {
     return $response;
 }
 
+/**
+ * Crypter le mot de passe
+ * return String $psw 
+ */ 
 function crypt_psw ($password) {
     $psw_sha1 = sha1($password);
     $psw = md5($psw_sha1);
     return $psw;
 }
 
+/**
+ * Vérifier le mail s'il existe dans la base de donné ou non
+ * return boolean $response
+ */ 
 function check_mail() {
     $dbase = db_connect();
     $mail = htmlspecialchars($_POST['email']);
@@ -47,6 +60,10 @@ function check_mail() {
     return $response;
 }
 
+/**
+ * Création de compte
+ * 
+ */
 function register() {
     $check_mail = check_mail();
     if ($check_mail == true) {
@@ -96,6 +113,10 @@ function register() {
                      
 }
 
+/**
+ * permet à l'utilisateur de se connecter 
+ * 
+ */
 function login() {
 
     $dbase = db_connect();
